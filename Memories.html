@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Romantic Image Section</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Great Vibes', cursive;
+            background: radial-gradient(circle, #ffdde1, #ee9ca7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            flex-direction: column;
+            text-align: center;
+            color: #fff;
+            animation: neonBlink 3s ease-in-out;
+        }
+
+        @keyframes neonBlink {
+            0%, 100% {
+                background: radial-gradient(circle, #ffdde1, #ee9ca7);
+            }
+            25% {
+                background: radial-gradient(circle, #ff6f91, #ff9a9e);
+            }
+            50% {
+                background: radial-gradient(circle, #fad0c4, #ffb6c1);
+            }
+            75% {
+                background: radial-gradient(circle, #ff9a9e, #fad0c4);
+            }
+        }
+
+        /* LOVE Animation */
+        #loveAnimation {
+            font-size: 80px;
+            font-weight: bold;
+            color: #ff6f91;
+            text-shadow: 2px 2px 10px rgba(255, 105, 135, 0.8);
+            animation: blink 1s ease-in-out 3, zoomOut 3s ease-in-out forwards;
+            position: absolute;
+            top: 40%;
+            z-index: 10;
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes zoomOut {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(3);
+                opacity: 0;
+            }
+        }
+
+        /* Decorative Floating Hearts */
+        .hearts {
+            position: absolute;
+            background: rgba(255, 192, 203, 0.7);
+            border-radius: 50%;
+            animation: float 12s infinite ease-in-out;
+            z-index: -1;
+        }
+
+        #top-hearts {
+            width: 60px;
+            height: 60px;
+            top: 10%;
+            left: 15%;
+        }
+
+        #bottom-hearts {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            right: 25%;
+        }
+
+        #left-hearts {
+            width: 50px;
+            height: 50px;
+            top: 40%;
+            left: 10%;
+        }
+
+        #right-hearts {
+            width: 70px;
+            height: 70px;
+            bottom: 30%;
+            right: 15%;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+
+        /* Romantic Glow */
+        .romantic-glow {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255, 182, 193, 0.7), transparent);
+            border-radius: 50%;
+            animation: pulse 6s infinite;
+        }
+
+        .romantic-glow:nth-child(1) {
+            top: 20%;
+            left: 40%;
+        }
+
+        .romantic-glow:nth-child(2) {
+            top: 60%;
+            left: 20%;
+        }
+
+        .romantic-glow:nth-child(3) {
+            top: 70%;
+            right: 15%;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.3);
+                opacity: 0.6;
+            }
+        }
+
+        /* Image Circle */
+        .image-circle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            margin-bottom: 30px;
+            visibility: hidden; /* Initially hide the image */
+        }
+
+        .image-circle img {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 12px solid #fff;
+            box-shadow: 0 0 30px rgba(255, 182, 193, 0.8);
+            animation: glowing-border 4s infinite alternate;
+            cursor: pointer; /* Make image clickable */
+        }
+
+        @keyframes glowing-border {
+            0% {
+                border-color: #ff6f91;
+                box-shadow: 0 0 30px #ff6f91, 0 0 40px #ff6f91;
+            }
+            100% {
+                border-color: #ffb6c1;
+                box-shadow: 0 0 30px #ffb6c1, 0 0 40px #ffb6c1;
+            }
+        }
+
+        /* Romantic Caption */
+        .romantic-caption {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Button Below Circle */
+        .memory-button-container {
+            margin-top: 20px;
+        }
+
+        .memory-button {
+            padding: 14px 30px;
+            background: linear-gradient(45deg, #ff6f91, #ffb6c1);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .memory-button:hover {
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            transform: scale(1.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Style for the "Ma'am please click on the image" text */
+        .click-text {
+            font-size: 22px;
+            color: #fff;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- LOVE Animation -->
+    <div id="loveAnimation">LOVE</div>
+
+    <!-- Decorative Floating Hearts -->
+    <div class="hearts" id="top-hearts"></div>
+    <div class="hearts" id="bottom-hearts"></div>
+    <div class="hearts" id="left-hearts"></div>
+    <div class="hearts" id="right-hearts"></div>
+
+    <!-- Romantic Glow Elements -->
+    <div class="romantic-glow"></div>
+    <div class="romantic-glow"></div>
+    <div class="romantic-glow"></div>
+
+    <!-- Romantic Caption -->
+    <div class="romantic-caption">Our love shines brighter than the stars ✨</div>
+
+    <!-- Text above the button -->
+    <div class="click-text">
+        Ma'am please click on the image
+    </div>
+
+    <!-- Image Circle -->
+    <div class="image-circle" id="imageCircle">
+        <img src="1.jpg" alt="Her Image" id="circleImage">
+    </div>
+
+    <!-- Button Below Circle -->
+    <div class="memory-button-container">
+        <button class="memory-button" id="memoryButton">Create a Magical Memory 💕</button>
+    </div>
+
+    <!-- Background Music (hidden initially) -->
+    <audio id="backgroundMusic" loop>
+        <source src="background-music.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- JavaScript -->
+    <script>
+        const circleImage = document.getElementById("circleImage");
+        const images = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg"];
+        let currentIndex = 0;
+
+        // Function to change the image every 3 seconds
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % images.length;
+            circleImage.src = images[currentIndex];
+        }, 3000);
+
+        // Button functionality
+        const memoryButton = document.getElementById("memoryButton");
+        memoryButton.addEventListener("click", () => {
+            window.location.href = "letter.html";  // Redirects to the timeline.html page
+        });
+
+        // Play background music when the image is clicked
+        circleImage.addEventListener("click", () => {
+            const backgroundMusic = document.getElementById("backgroundMusic");
+            if (backgroundMusic.paused) {
+                backgroundMusic.play();
+            } else {
+                backgroundMusic.pause();
+            }
+        });
+
+        // Show LOVE animation and hide image circle initially
+        setTimeout(() => {
+            document.getElementById("loveAnimation").style.display = "none";
+            document.body.style.animation = "none";
+            document.querySelector(".image-circle").style.visibility = "visible";
+        }, 3000);
+    </script>
+</body>
+</html>
