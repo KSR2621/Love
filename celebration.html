@@ -9,6 +9,7 @@
             margin: 0;
             padding: 0;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -36,14 +37,15 @@
 
         /* Birthday Cake */
         .cake img {
-            width: 100%;
-            height: auto;
-            position: relative;
-            z-index: 2;
+            width: 500px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-top: 100px;
         }
     </style>
     <script>
-        // Redirect to memories.html after 5 seconds
+        // Redirect to Memories.html after 5 seconds
         setTimeout(function() {
             window.location.href = "Memories.html";
         }, 5000);
@@ -55,8 +57,7 @@
 
     <!-- Birthday Cake -->
     <div class="cake">
-        <img src="cake.jpg" alt="Birthday Cake" 
-     style="width: 500px; height: 500px; object-fit: cover; border-radius: 50%; margin-top: 50px;">
+        <img src="cake.jpg" alt="Birthday Cake">
     </div>
 
     <!-- Happy Birthday Song -->
